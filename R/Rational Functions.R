@@ -6,23 +6,6 @@ setMethod("show", "Rational", function(object) {
   return(invisible(object))
 })
 
-
-##' @title GCD and LCM functions
-##' @param x A numeric object that can be coerced to integer
-##' @param y A numeric object that can be coerced to integer
-##' @return The GCD or LCM
-##' @rdname gcd_and_lcm
-Rcpp::cppFunction("
-int gcd(int x, int y) {
- return  std::gcd(x, y);
-}")
-
-##' @rdname gcd_and_lcm
-Rcpp::cppFunction("
-int lcm(int x, int y) {
- return  std::lcm(x, y);
-}")
-
 ##' @title Simplify a `Rational` object
 ##' @param object A `Rational` object
 ##' @return A `Rational` object equal to `object`, but whose numerator and
@@ -46,7 +29,7 @@ quotient <- function(object, digits = NULL) {
        (is.numeric(digits) & digits == round(digits) & digits > 0))) {
     stop("digits must be a positive integer or NULL")
   }
-  
+
   return(print(object@numerator/object@denominator, digits = digits))
 }
 
@@ -60,7 +43,7 @@ setMethod("+", signature("Rational", "Rational"),
             lcm <- lcm(e1@denominator, e2@denominator)
             scale1 <- lcm/e1@denominator
             scale2 <- lcm/e2@denominator
-            
+
             return(R(e1@numerator*scale1 + e2@numerator*scale2,
                      lcm))
           })

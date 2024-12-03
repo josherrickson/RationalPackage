@@ -13,3 +13,8 @@ Authors@R: c(
     person("Sally", "Field", role = "ctb")
   )
 License: AGPL (>= 3)
+RoxygenNote: 7.3.2
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp

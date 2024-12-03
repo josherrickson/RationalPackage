@@ -1,6 +1,7 @@
 ##' @title Show method for `Rational` object
 ##' @param object A `Rational` object
 ##' @return `object`, invisibly
+##' @export
 setMethod("show", "Rational", function(object) {
   cat(object@numerator, "/", object@denominator, "\n")
   return(invisible(object))
@@ -10,6 +11,7 @@ setMethod("show", "Rational", function(object) {
 ##' @param object A `Rational` object
 ##' @return A `Rational` object equal to `object`, but whose numerator and
 ##'   denominator have GCD of 1.
+##' @export
 simplify <- function(object) {
   stopifnot(is(object, "Rational"))
   divisor <- gcd(object@numerator, object@denominator)
@@ -22,6 +24,7 @@ simplify <- function(object) {
 ##' @param digits The number of digits to print. The returned value has machine
 ##'   precision.
 ##' @return The decimal numeric created from the `Rational`
+##' @export
 quotient <- function(object, digits = NULL) {
   stopifnot(is(object, "Rational"))
   if(!(is.null(digits) ||

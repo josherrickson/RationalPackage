@@ -9,10 +9,11 @@ setClass("Rational",
 ##' @param num Numerator integer
 ##' @param denom Denominator integer
 ##' @return A `Rational` object
+##' @export
 R <- function(num, denom) {
   num <- as.integer(num)
   denom <- as.integer(denom)
-  
+
   new("Rational", numerator = num, denominator = denom)
 }
 

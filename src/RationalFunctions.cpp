@@ -6,12 +6,14 @@ using namespace Rcpp;
 //' @param y A numeric object that can be coerced to integer
 //' @return The GCD or LCM
 //' @rdname gcd_and_lcm
+//' @export
 // [[Rcpp::export]]
 int gcd(int x, int y) {
   return  std::gcd(x, y);
 }
 
 //' @rdname gcd_and_lcm
+//' @export
 // [[Rcpp::export]]
 int lcm(int x, int y) {
   return  std::lcm(x, y);

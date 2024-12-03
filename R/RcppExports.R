@@ -6,11 +6,13 @@
 #' @param y A numeric object that can be coerced to integer
 #' @return The GCD or LCM
 #' @rdname gcd_and_lcm
+#' @export
 gcd <- function(x, y) {
     .Call(`_Rational_gcd`, x, y)
 }
 
 #' @rdname gcd_and_lcm
+#' @export
 lcm <- function(x, y) {
     .Call(`_Rational_lcm`, x, y)
 }

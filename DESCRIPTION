@@ -1,11 +1,15 @@
 Package: Rational
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Rational Class
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: Implements a Raional class to represent
+    ratios of integers and functions therein.
 Encoding: UTF-8
 LazyData: true
+Authors@R: c(
+    person("Josh", "Errickson", 
+      email = "jerrick@umich.edu", 
+      role = c("aut", "cre")),
+    person("Sally", "Field", role = "ctb")
+  )
+License: AGPL (>= 3)

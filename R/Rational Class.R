@@ -11,6 +11,7 @@ setClass("Rational",
 ##' @return A `Rational` object
 ##' @export
 R <- function(num, denom) {
+  stopifnot(num%%1 == 0, denom%%1 == 0)
   num <- as.integer(num)
   denom <- as.integer(denom)
 

@@ -90,3 +90,15 @@ setMethod("^", signature("Rational", "numeric"),
             return(R(e1@numerator^e2,
                      e1@denominator^e2))
           })
+
+
+#' Rational to string
+#' @param x A `Rational` object
+#' @return Character version of `x`
+#' @export
+as.character.Rational <- function(x) {
+  return(paste0(x@numerator, "/", x@denominator))
+}
+
+
+

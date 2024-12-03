@@ -18,3 +18,7 @@ The decimal numeric created from the `Rational`
 \description{
 Convert a `Rational` into a decimal
 }
+\examples{
+rat <- R(2, 4)
+quotient(rat)
+}

@@ -25,6 +25,9 @@ simplify <- function(object) {
 ##'   precision.
 ##' @return The decimal numeric created from the `Rational`
 ##' @export
+##' @examples
+##' rat <- R(2, 4)
+##' quotient(rat)
 quotient <- function(object, digits = NULL) {
   stopifnot(is(object, "Rational"))
   if(!(is.null(digits) ||
@@ -79,4 +82,11 @@ setMethod("/", signature("Rational", "Rational"),
           function(e1, e2) {
             e2 <- R(e2@numerator, e2@denominator)
             return(e1 * e2)
+          })
+
+##' @rdname rational_ops
+setMethod("^", signature("Rational", "numeric"),
+          function(e1, e2) {
+            return(R(e1@numerator^e2,
+                     e1@denominator^e2))
           })

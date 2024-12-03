@@ -6,6 +6,7 @@
 \alias{-,Rational,Rational-method}
 \alias{*,Rational,Rational-method}
 \alias{/,Rational,Rational-method}
+\alias{^,Rational,numeric-method}
 \title{Operators for `Rational` Objects}
 \usage{
 \S4method{+}{Rational,Rational}(e1, e2)
@@ -17,6 +18,8 @@
 \S4method{*}{Rational,Rational}(e1, e2)
 
 \S4method{/}{Rational,Rational}(e1, e2)
+
+\S4method{^}{Rational,numeric}(e1, e2)
 }
 \arguments{
 \item{e1}{a `Rational` Object}

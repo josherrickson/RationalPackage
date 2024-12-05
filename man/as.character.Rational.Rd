@@ -4,10 +4,12 @@
 \alias{as.character.Rational}
 \title{Rational to string}
 \usage{
-\method{as.character}{Rational}(x)
+\method{as.character}{Rational}(x, ...)
 }
 \arguments{
 \item{x}{A `Rational` object}
+
+\item{...}{add'l arguments (ignored)}
 }
 \value{
 Character version of `x`

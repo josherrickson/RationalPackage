@@ -1,0 +1,20 @@
+---
+title: "intro_rational"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro_rational}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Rational)
+quotientR(1/3)
+```

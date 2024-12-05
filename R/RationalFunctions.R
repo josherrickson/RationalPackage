@@ -2,6 +2,7 @@
 ##' @param object A `Rational` object
 ##' @return `object`, invisibly
 ##' @export
+##' @importFrom methods show
 setMethod("show", "Rational", function(object) {
   cat(object@numerator, "/", object@denominator, "\n")
   return(invisible(object))
@@ -12,8 +13,9 @@ setMethod("show", "Rational", function(object) {
 ##' @return A `Rational` object equal to `object`, but whose numerator and
 ##'   denominator have GCD of 1.
 ##' @export
+##' @importFrom methods is
 simplify <- function(object) {
-  stopifnot(is(object, "Rational"))
+  stopifnot(methods::is(object, "Rational"))
   divisor <- gcd(object@numerator, object@denominator)
   return(R(object@numerator/divisor,
            object@denominator/divisor))
@@ -25,11 +27,12 @@ simplify <- function(object) {
 ##'   precision.
 ##' @return The decimal numeric created from the `Rational`
 ##' @export
+##' @importFrom methods is
 ##' @examples
 ##' rat <- R(2, 4)
 ##' quotient(rat)
 quotient <- function(object, digits = NULL) {
-  stopifnot(is(object, "Rational"))
+  stopifnot(methods::is(object, "Rational"))
   if(!(is.null(digits) ||
        is.integer(digits) ||
        (is.numeric(digits) & digits == round(digits) & digits > 0))) {
@@ -57,8 +60,8 @@ setMethod("+", signature("Rational", "Rational"),
 # This isn't explicitly needed, but is nice to have. One argument implies "-R()"
 # as opposed to the two argument version below for "R() - R()".
 ##' @rdname rational_ops
-setMethod("-", signature("Rational"),
-          function(e1) {
+setMethod("-", signature("Rational", "missing"),
+          function(e1, e2) {
             e1@numerator <- -e1@numerator
             return(e1)
           })

@@ -10,12 +10,15 @@ setClass("Rational",
 ##' @param denom Denominator integer
 ##' @return A `Rational` object
 ##' @export
+##' @importFrom methods new
 R <- function(num, denom) {
   stopifnot(num%%1 == 0, denom%%1 == 0)
   num <- as.integer(num)
   denom <- as.integer(denom)
 
-  new("Rational", numerator = num, denominator = denom)
+  return(methods::new("Rational",
+                      numerator = num,
+                      denominator = denom))
 }
 
 setValidity("Rational", function(object) {

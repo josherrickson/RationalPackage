@@ -2,7 +2,7 @@
 % Please edit documentation in R/RationalFunctions.R
 \name{+,Rational,Rational-method}
 \alias{+,Rational,Rational-method}
-\alias{-,Rational,ANY-method}
+\alias{-,Rational,missing-method}
 \alias{-,Rational,Rational-method}
 \alias{*,Rational,Rational-method}
 \alias{/,Rational,Rational-method}
@@ -11,7 +11,7 @@
 \usage{
 \S4method{+}{Rational,Rational}(e1, e2)
 
-\S4method{-}{Rational,ANY}(e1)
+\S4method{-}{Rational,missing}(e1, e2)
 
 \S4method{-}{Rational,Rational}(e1, e2)
 

@@ -16,5 +16,5 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(Rational)
-quotientR(1/3)
+quotient(R(1, 3))
 ```
